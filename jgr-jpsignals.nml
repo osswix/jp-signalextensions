@@ -19,62 +19,62 @@ if (!extended_feature_test("action3_signals_custom_signal_sprites")) {
 
 template template_signal_2tall(x,y){
 
-	[ x, y, 5, 22, -1, -20]
-	[ x+66, y, 5, 22, -1, -20]
-	[ x+132, y, 6, 22, -1, -20]
-	[ x+198, y, 6, 22, -1, -20]
-	[ x+264, y, 5, 22, -1, -20]
-	[ x+330, y, 5, 22, -1, -20]
-	[ x+396, y, 6, 22, -1, -20]
-	[ x+462, y, 6, 22, -1, -20]
+	[ x, y, 5, 22, -1, -20, ANIM]
+	[ x+66, y, 6, 22, -1, -20, ANIM]
+	[ x+132, y, 6, 22, -1, -20, ANIM]
+	[ x+198, y, 5, 22, -1, -20, ANIM]
+	[ x+264, y, 5, 22, -1, -20, ANIM]
+	[ x+330, y, 5, 22, -1, -20, ANIM]
+	[ x+396, y, 6, 22, -1, -20, ANIM]
+	[ x+462, y, 6, 22, -1, -20, ANIM]
 }
 
 template template_signal_3tall(x,y){
 
-	[ x, y, 5, 20, -1, -20]
-	[ x+66, y, 5, 20, -1, -20]
-	[ x+132, y, 6, 20, -1, -20]
-	[ x+198, y, 6, 20, -1, -20]
-	[ x+264, y, 5, 20, -1, -20]
-	[ x+330, y, 5, 20, -1, -20]
-	[ x+396, y, 6, 20, -1, -20]
-	[ x+462, y, 6, 20, -1, -20]
+	[ x, y, 5, 20, -1, -20, ANIM]
+	[ x+66, y, 6, 20, -1, -20, ANIM]
+	[ x+132, y, 6, 20, -1, -20, ANIM]
+	[ x+198, y, 5, 20, -1, -20, ANIM]
+	[ x+264, y, 5, 20, -1, -20, ANIM]
+	[ x+330, y, 5, 20, -1, -20, ANIM]
+	[ x+396, y, 6, 20, -1, -20, ANIM]
+	[ x+462, y, 6, 20, -1, -20, ANIM]
 }
 
 template template_signal_4tall(x,y){
 
-	[ x, y, 5, 22, -1, -20]
-	[ x+66, y, 5, 22, -1, -20]
-	[ x+132, y, 6, 22, -1, -20]
-	[ x+198, y, 6, 22, -1, -20]
-	[ x+264, y, 5, 22, -1, -20]
-	[ x+330, y, 5, 22, -1, -20]
-	[ x+396, y, 6, 22, -1, -20]
-	[ x+462, y, 6, 22, -1, -20]
+	[ x, y, 5, 22, -1, -20, ANIM]
+	[ x+66, y, 6, 22, -1, -20, ANIM]
+	[ x+132, y, 6, 22, -1, -20, ANIM]
+	[ x+198, y, 5, 22, -1, -20, ANIM]
+	[ x+264, y, 5, 22, -1, -20, ANIM]
+	[ x+330, y, 5, 22, -1, -20, ANIM]
+	[ x+396, y, 6, 22, -1, -20, ANIM]
+	[ x+462, y, 6, 22, -1, -20, ANIM]
 }
 
 template template_signal_5tall(x,y){
 
-	[ x, y, 5, 24, -1, -20]
-	[ x+66, y, 5, 24, -1, -20]
-	[ x+132, y, 6, 24, -1, -20]
-	[ x+198, y, 6, 24, -1, -20]
-	[ x+264, y, 5, 24, -1, -20]
-	[ x+330, y, 5, 24, -1, -20]
-	[ x+396, y, 6, 24, -1, -20]
-	[ x+462, y, 6, 24, -1, -20]
+	[ x, y, 5, 24, -1, -20, ANIM]
+	[ x+66, y, 6, 24, -1, -20, ANIM]
+	[ x+132, y, 6, 24, -1, -20, ANIM]
+	[ x+198, y, 5, 24, -1, -20, ANIM]
+	[ x+264, y, 5, 24, -1, -20, ANIM]
+	[ x+330, y, 5, 24, -1, -20, ANIM]
+	[ x+396, y, 6, 24, -1, -20, ANIM]
+	[ x+462, y, 6, 24, -1, -20, ANIM]
 }
 
 template template_signal_6tall(x,y){
 
-	[ x, y, 5, 26, -1, -20]
-	[ x+66, y, 5, 26, -1, -20]
-	[ x+132, y, 6, 26, -1, -20]
-	[ x+198, y, 6, 26, -1, -20]
-	[ x+264, y, 5, 26, -1, -20]
-	[ x+330, y, 5, 26, -1, -20]
-	[ x+396, y, 6, 26, -1, -20]
-	[ x+462, y, 6, 26, -1, -20]
+	[ x, y, 5, 26, -1, -20, ANIM]
+	[ x+66, y, 6, 26, -1, -20, ANIM]
+	[ x+132, y, 6, 26, -1, -20, ANIM]
+	[ x+198, y, 5, 26, -1, -20, ANIM]
+	[ x+264, y, 5, 26, -1, -20, ANIM]
+	[ x+330, y, 5, 26, -1, -20, ANIM]
+	[ x+396, y, 6, 26, -1, -20, ANIM]
+	[ x+462, y, 6, 26, -1, -20, ANIM]
 }
 
 // template for spriteset :
@@ -168,21 +168,27 @@ spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
 switch(FEAT_SIGNALS, SELF, twotall_a, getbits(extra_callback_info2, 0, 2)){
 	00: signal_2a_st;
 	05: signal_2a_cl;
+		signal_2a_cl;
 }
 
 switch(FEAT_SIGNALS, SELF, twotall_b, getbits(extra_callback_info2, 0, 2)){
 	00: signal_2a_st;
 	02: signal_2b_ct;
+		signal_2b_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, threetall, getbits(extra_callback_info2, 0, 2)){
 	00: signal_3_st;
+	01: signal_3_cl;
 	05: signal_3_cl;
+	04: signal_3_cl;
+	03: signal_3_cl;
 	02: signal_3_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 2)){
 	00: signal_4a_st;
+	01: signal_4a_cl;
 	05: signal_4a_cl;
 	04: signal_4a_lr;
 	03: signal_4a_sr;
@@ -191,12 +197,16 @@ switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 2)){
 
 switch(FEAT_SIGNALS, SELF, fourtall_b, getbits(extra_callback_info2, 0, 2)){
 	00: signal_4b_st;
+	01: signal_4b_cl;
 	05: signal_4b_cl;
+	04: signal_4b_cl;
+	03: signal_4b_cl;
 	02: signal_4b_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, fivetall_a, getbits(extra_callback_info2, 0, 2)){
 	00: signal_5a_st;
+	01: signal_5a_cl;
 	05: signal_5a_cl;
 	04: signal_5a_lr;
 	03: signal_5a_sr;
@@ -222,14 +232,14 @@ switch(FEAT_SIGNALS, SELF, sixtall, getbits(extra_callback_info2, 0, 2)){
 }
 
 switch(FEAT_SIGNALS, SELF, japanmultiaspect, signal_style){
-	00: twotall_a;
-	01: twotall_b;
-	02: threetall;
-	03: fourtall_a;
-	04: fourtall_b;
-	05: fivetall_a;
-	06: fivetall_b;
-	07: sixtall;
+	01: twotall_a;
+	02: twotall_b;
+	03: threetall;
+	04: fourtall_a;
+	05: fourtall_b;
+	06: fivetall_a;
+	07: fivetall_b;
+	08: sixtall;
 }
 
 item (FEAT_SIGNALS, custom_signals, 0) { 
@@ -238,42 +248,36 @@ item (FEAT_SIGNALS, custom_signals, 0) {
 		
 		define_style:		1;
 		style_name:			string(STR_SIG_2a);
-		style_lookahead_extra_aspects:	4;
+//		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 
 		define_style:		2;
 		style_name:			string(STR_SIG_2b);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 		define_style:		3;
 		style_name:			string(STR_SIG_3);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 		define_style:		4;
 		style_name:			string(STR_SIG_4a);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 		define_style:		5;
 		style_name:			string(STR_SIG_4b);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 		define_style:		6;
 		style_name:			string(STR_SIG_5a);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 		define_style:		7;
 		style_name:			string(STR_SIG_5b);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 
 		define_style:		8;
 		style_name:			string(STR_SIG_6);
-		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 	}
 
