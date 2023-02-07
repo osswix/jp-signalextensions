@@ -165,19 +165,19 @@ spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
 // 01 for hs
 
 //This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
-switch(FEAT_SIGNALS, SELF, twotall_a, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, twotall_a, getbits(extra_callback_info2, 0, 8)){
 	00: signal_2a_st;
 	05: signal_2a_cl;
 		signal_2a_cl;
 }
 
-switch(FEAT_SIGNALS, SELF, twotall_b, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, twotall_b, getbits(extra_callback_info2, 0, 8)){
 	00: signal_2a_st;
 	02: signal_2b_ct;
 		signal_2b_ct;
 }
 
-switch(FEAT_SIGNALS, SELF, threetall, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, threetall, getbits(extra_callback_info2, 0, 8)){
 	00: signal_3_st;
 	01: signal_3_cl;
 	05: signal_3_cl;
@@ -186,7 +186,7 @@ switch(FEAT_SIGNALS, SELF, threetall, getbits(extra_callback_info2, 0, 2)){
 	02: signal_3_ct;
 }
 
-switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 8)){
 	00: signal_4a_st;
 	01: signal_4a_cl;
 	05: signal_4a_cl;
@@ -195,7 +195,7 @@ switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 2)){
 	02: signal_4a_ct;
 }
 
-switch(FEAT_SIGNALS, SELF, fourtall_b, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, fourtall_b, getbits(extra_callback_info2, 0, 8)){
 	00: signal_4b_st;
 	01: signal_4b_cl;
 	05: signal_4b_cl;
@@ -204,7 +204,7 @@ switch(FEAT_SIGNALS, SELF, fourtall_b, getbits(extra_callback_info2, 0, 2)){
 	02: signal_4b_ct;
 }
 
-switch(FEAT_SIGNALS, SELF, fivetall_a, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, fivetall_a, getbits(extra_callback_info2, 0, 8)){
 	00: signal_5a_st;
 	01: signal_5a_cl;
 	05: signal_5a_cl;
@@ -213,7 +213,7 @@ switch(FEAT_SIGNALS, SELF, fivetall_a, getbits(extra_callback_info2, 0, 2)){
 	02: signal_5a_ct;
 }
 
-switch(FEAT_SIGNALS, SELF, fivetall_b, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, fivetall_b, getbits(extra_callback_info2, 0, 8)){
 	00: signal_5b_st;
 	01: signal_5b_hs;
 	05: signal_5b_cl;
@@ -222,7 +222,7 @@ switch(FEAT_SIGNALS, SELF, fivetall_b, getbits(extra_callback_info2, 0, 2)){
 	02: signal_5b_ct;
 }
 
-switch(FEAT_SIGNALS, SELF, sixtall, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, sixtall, getbits(extra_callback_info2, 0, 8)){
 	00: signal_6_st;
 	01: signal_6_hs;
 	05: signal_6_cl;
