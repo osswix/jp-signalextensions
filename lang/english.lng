@@ -1,0 +1,9 @@
+##grflangid 0x01
+
+STR_GRF_NAME :Osswixs multiaspect japanese signal extension
+STR_GRF_DESC :Multiaspect signals based on japanese signalling using the japan-set signals
+
+STR_SIG_1 :4 Aspect Gantry Signal
+STR_SIG_2 :4 Aspect Gantry Signal (Flashing yellows)
+
+STR_UNSUPPORTED_VERSION	:You must use a recent version of JGR Patch Pack!

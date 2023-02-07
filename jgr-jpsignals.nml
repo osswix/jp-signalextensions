@@ -1,0 +1,239 @@
+grf {
+    grfid: "OMJS";
+    name: string(STR_GRF_NAME);
+    desc: string(STR_GRF_DESC);
+    version: 0;
+    min_compatible_version: 0;
+}
+
+if (!extended_feature_test("action3_signals_custom_signal_sprites")) {
+	error(FATAL, string(STR_UNSUPPORTED_VERSION));
+}
+//templates use the following format :
+// template [template name](x,y){
+//	[ x, y, sx, sy, ox, oy]
+// where the first x and y are the starting coordinates of a sprite
+// sx and sy are size in x and y respectively
+// ox and oy are offset in x and y respectively
+//}
+
+template template_signal_2tall(x,y){
+
+	[ x, y, 5, 22, -1, -20]
+	[ x+66, y, 5, 22, -1, -20]
+	[ x+132, y, 6, 22, -1, -20]
+	[ x+198, y, 6, 22, -1, -20]
+	[ x+264, y, 5, 22, -1, -20]
+	[ x+330, y, 5, 22, -1, -20]
+	[ x+396, y, 6, 22, -1, -20]
+	[ x+462, y, 6, 22, -1, -20]
+}
+
+template template_signal_3tall(x,y){
+
+	[ x, y, 5, 20, -1, -20]
+	[ x+66, y, 5, 20, -1, -20]
+	[ x+132, y, 6, 20, -1, -20]
+	[ x+198, y, 6, 20, -1, -20]
+	[ x+264, y, 5, 20, -1, -20]
+	[ x+330, y, 5, 20, -1, -20]
+	[ x+396, y, 6, 20, -1, -20]
+	[ x+462, y, 6, 20, -1, -20]
+}
+
+template template_signal_4tall(x,y){
+
+	[ x, y, 5, 22, -1, -20]
+	[ x+66, y, 5, 22, -1, -20]
+	[ x+132, y, 6, 22, -1, -20]
+	[ x+198, y, 6, 22, -1, -20]
+	[ x+264, y, 5, 22, -1, -20]
+	[ x+330, y, 5, 22, -1, -20]
+	[ x+396, y, 6, 22, -1, -20]
+	[ x+462, y, 6, 22, -1, -20]
+}
+
+template template_signal_5tall(x,y){
+
+	[ x, y, 5, 24, -1, -20]
+	[ x+66, y, 5, 24, -1, -20]
+	[ x+132, y, 6, 24, -1, -20]
+	[ x+198, y, 6, 24, -1, -20]
+	[ x+264, y, 5, 24, -1, -20]
+	[ x+330, y, 5, 24, -1, -20]
+	[ x+396, y, 6, 24, -1, -20]
+	[ x+462, y, 6, 24, -1, -20]
+}
+
+template template_signal_6tall(x,y){
+
+	[ x, y, 5, 26, -1, -20]
+	[ x+66, y, 5, 26, -1, -20]
+	[ x+132, y, 6, 26, -1, -20]
+	[ x+198, y, 6, 26, -1, -20]
+	[ x+264, y, 5, 26, -1, -20]
+	[ x+330, y, 5, 26, -1, -20]
+	[ x+396, y, 6, 26, -1, -20]
+	[ x+462, y, 6, 26, -1, -20]
+}
+
+// template for spriteset :
+// spriteset([name], "file location"){[template_specific](x,y)}
+// where file location is the location of the image containing the sprites
+// template_specific is the template relevant to the sprites
+// x and y are the starting coordinates of the first sprite in the set
+
+// osswix's japanese signal 'shortcuts':
+// hs: double green - high speed clear
+// cl: single green - clear
+// lr: flashing yellow over green - less speed reduced
+// sr: yellow over green - speed reduced
+// ct: single yellow - caution
+// rs: double yellow - restricted speed
+// st: single red - stop
+
+// 2 tall signals
+
+spriteset(signal_2a_cl, "japanmultiaspect.png"){template_signal_2tall(35,28)}
+spriteset(signal_2a_st, "japanmultiaspect.png"){template_signal_2tall(70,28)}
+spriteset(signal_2b_ct, "japanmultiaspect.png"){template_signal_2tall(56,53)}
+
+// 3 tall signals
+
+spriteset(signal_3_cl, "japanmultiaspect.png"){template_signal_3tall(35,78)}
+spriteset(signal_3_ct, "japanmultiaspect.png"){template_signal_3tall(56,78)}
+spriteset(signal_3_st, "japanmultiaspect.png"){template_signal_3tall(70,78)}
+
+// 4 tall signals
+
+spriteset(signal_4a_cl, "japanmultiaspect.png"){template_signal_4tall(35,101)}
+spriteset(signal_4a_lr, "japanmultiaspect.png"){template_signal_4tall(42,101)}
+spriteset(signal_4a_sr, "japanmultiaspect.png"){template_signal_4tall(49,101)}
+spriteset(signal_4a_ct, "japanmultiaspect.png"){template_signal_4tall(56,101)}
+spriteset(signal_4a_st, "japanmultiaspect.png"){template_signal_4tall(70,101)}
+spriteset(signal_4b_cl, "japanmultiaspect.png"){template_signal_4tall(35,126)}
+spriteset(signal_4b_ct, "japanmultiaspect.png"){template_signal_4tall(56,126)}
+spriteset(signal_4b_rs, "japanmultiaspect.png"){template_signal_4tall(63,126)}
+spriteset(signal_4b_st, "japanmultiaspect.png"){template_signal_4tall(70,126)}
+
+// 5 tall signals
+
+spriteset(signal_5a_cl, "japanmultiaspect.png"){template_signal_5tall(35,151)}
+spriteset(signal_5a_lr, "japanmultiaspect.png"){template_signal_5tall(42,151)}
+spriteset(signal_5a_sr, "japanmultiaspect.png"){template_signal_5tall(49,151)}
+spriteset(signal_5a_ct, "japanmultiaspect.png"){template_signal_5tall(56,151)}
+spriteset(signal_5a_rs, "japanmultiaspect.png"){template_signal_5tall(63,151)}
+spriteset(signal_5a_st, "japanmultiaspect.png"){template_signal_5tall(70,151)}
+spriteset(signal_5b_hs, "japanmultiaspect.png"){template_signal_5tall(28,178)}
+spriteset(signal_5b_cl, "japanmultiaspect.png"){template_signal_5tall(35,178)}
+spriteset(signal_5b_lr, "japanmultiaspect.png"){template_signal_5tall(42,178)}
+spriteset(signal_5b_sr, "japanmultiaspect.png"){template_signal_5tall(49,178)}
+spriteset(signal_5b_ct, "japanmultiaspect.png"){template_signal_5tall(56,178)}
+spriteset(signal_5b_st, "japanmultiaspect.png"){template_signal_5tall(70,178)}
+
+// 6 tall signals
+
+spriteset(signal_6_hs, "japanmultiaspect.png"){template_signal_6tall(28,205)}
+spriteset(signal_6_cl, "japanmultiaspect.png"){template_signal_6tall(35,205)}
+spriteset(signal_6_lr, "japanmultiaspect.png"){template_signal_6tall(42,205)}
+spriteset(signal_6_sr, "japanmultiaspect.png"){template_signal_6tall(49,205)}
+spriteset(signal_6_ct, "japanmultiaspect.png"){template_signal_6tall(56,205)}
+spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
+spriteset(signal_6_st, "japanmultiaspect.png"){template_signal_6tall(70,205)}
+
+// reduced speed signals
+
+spriteset(signal_4b_rs, "japanmultiaspect.png"){template_signal_4tall(63,126)}
+spriteset(signal_5a_rs, "japanmultiaspect.png"){template_signal_5tall(63,151)}
+spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
+
+// \/ osswix now has touched it \/
+
+//Switches use the following format:
+//switch(FEAT_SIGNALS, SELF, [name], [variable]{
+//	value: result;
+//	value: result;
+//	return result; //Giving a "return result" at the end will give a default value when none of the other values have been met by the variable
+//}
+//The name can be any text string you like.
+//The variables are pre-selected here to give the correct results
+//The result can be a spriteset or another switch
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, twotall_a, getbits(extra_callback_info2, 0, 2)){
+	00: signal_2a_st;
+	02: signal_2a_cl;
+}
+
+switch(FEAT_SIGNALS, SELF, twotall_b, getbits(extra_callback_info2, 0, 2)){
+	00: signal_2a_st;
+	02: signal_2b_ct:
+}
+
+switch(FEAT_SIGNALS, SELF, threetall, getbits(extra_callback_info2, 0, 2)){
+	00: signal_3_st;
+	02: signal_3_cl;
+	05: signal_3_ct;
+}
+
+switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 2)){
+	00: signal_4a_st;
+	02: signal_4a_cl;
+	03: signal_4a_lr;
+	04: signal_4a_sr;
+	05: signal_4a_ct;
+}
+
+switch(FEAT_SIGNALS, SELF, fourtall_b, getbits(extra_callback_info2, 0, 2)){
+	00: signal_4b_st;
+	02: signal_4b_cl:
+	05: signal_4b_ct;
+}
+
+switch(feat_signals, SELF, fivetall_a, getbits(extra_callback_info2, 0, 2)){
+	00: signal_5a_st;
+	02: signal_5a_cl;
+	03: signal_5a_lr;
+	04: signal_5a_sr;
+	05: signal_5a_ct;
+}
+
+switch(FEAT_SIGNALS, SELF, fivetall_b, getbits(extra_callback_info2, 0, 2)){
+	00: signal_5b_st;
+	01: signal_5b_hs;
+	05: signal_5b_cl;
+	04: signal_5b_lr;
+	03: signal_5b_sr;
+	02: signal_5b_ct;
+}
+
+switch(FEAT_SIGNALS, SELF, sixtall, getbits(extra_callback_info2, 0, 2)){
+	00: signal_6_st;
+	01: signal_6_hs;
+	05: signal_6_cl;
+	04: signal_6_lr;
+	03: signal_6_sr;
+	02: signal_6_ct;
+}
+
+item (FEAT_SIGNALS, custom_signals, 0) { 
+	property{
+		extra_aspects:		4;	//Number of extra aspects to be used across all signal types (0=only red/green, 1=red/yellow/green etc). Set it to the max of all your signal types
+		
+		define_style:		1;
+		style_name:			string(STR_SIG_1);
+		style_lookahead_extra_aspects:	2; //This is how you override the extra aspects, i.e. extra_aspects is set to 6 but you only want trains to see 4 signals ahead
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS);//Types of electric signals availiable to be built
+
+
+		define_style:		2;
+		style_name:			string(STR_SIG_2);
+		style_lookahead_extra_aspects:	2;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_PBS_ONEWAY);//Types of electric signals availiable to be built
+	}
+
+    graphics {
+        japanmultiaspect;
+    }
+}
