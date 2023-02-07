@@ -113,7 +113,6 @@ spriteset(signal_4a_ct, "japanmultiaspect.png"){template_signal_4tall(56,101)}
 spriteset(signal_4a_st, "japanmultiaspect.png"){template_signal_4tall(70,101)}
 spriteset(signal_4b_cl, "japanmultiaspect.png"){template_signal_4tall(35,126)}
 spriteset(signal_4b_ct, "japanmultiaspect.png"){template_signal_4tall(56,126)}
-spriteset(signal_4b_rs, "japanmultiaspect.png"){template_signal_4tall(63,126)}
 spriteset(signal_4b_st, "japanmultiaspect.png"){template_signal_4tall(70,126)}
 
 // 5 tall signals
@@ -122,7 +121,6 @@ spriteset(signal_5a_cl, "japanmultiaspect.png"){template_signal_5tall(35,151)}
 spriteset(signal_5a_lr, "japanmultiaspect.png"){template_signal_5tall(42,151)}
 spriteset(signal_5a_sr, "japanmultiaspect.png"){template_signal_5tall(49,151)}
 spriteset(signal_5a_ct, "japanmultiaspect.png"){template_signal_5tall(56,151)}
-spriteset(signal_5a_rs, "japanmultiaspect.png"){template_signal_5tall(63,151)}
 spriteset(signal_5a_st, "japanmultiaspect.png"){template_signal_5tall(70,151)}
 spriteset(signal_5b_hs, "japanmultiaspect.png"){template_signal_5tall(28,178)}
 spriteset(signal_5b_cl, "japanmultiaspect.png"){template_signal_5tall(35,178)}
@@ -138,7 +136,6 @@ spriteset(signal_6_cl, "japanmultiaspect.png"){template_signal_6tall(35,205)}
 spriteset(signal_6_lr, "japanmultiaspect.png"){template_signal_6tall(42,205)}
 spriteset(signal_6_sr, "japanmultiaspect.png"){template_signal_6tall(49,205)}
 spriteset(signal_6_ct, "japanmultiaspect.png"){template_signal_6tall(56,205)}
-spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
 spriteset(signal_6_st, "japanmultiaspect.png"){template_signal_6tall(70,205)}
 
 // reduced speed signals
@@ -159,43 +156,51 @@ spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
 //The variables are pre-selected here to give the correct results
 //The result can be a spriteset or another switch
 
+// for the japanese signal the following statusses are used :
+// 00 for st
+// 05 for cl
+// 04 for lr
+// 03 for sr
+// 02 for ct
+// 01 for hs
+
 //This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
 switch(FEAT_SIGNALS, SELF, twotall_a, getbits(extra_callback_info2, 0, 2)){
 	00: signal_2a_st;
-	02: signal_2a_cl;
+	05: signal_2a_cl;
 }
 
 switch(FEAT_SIGNALS, SELF, twotall_b, getbits(extra_callback_info2, 0, 2)){
 	00: signal_2a_st;
-	02: signal_2b_ct:
+	02: signal_2b_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, threetall, getbits(extra_callback_info2, 0, 2)){
 	00: signal_3_st;
-	02: signal_3_cl;
-	05: signal_3_ct;
+	05: signal_3_cl;
+	02: signal_3_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, fourtall_a, getbits(extra_callback_info2, 0, 2)){
 	00: signal_4a_st;
-	02: signal_4a_cl;
-	03: signal_4a_lr;
-	04: signal_4a_sr;
-	05: signal_4a_ct;
+	05: signal_4a_cl;
+	04: signal_4a_lr;
+	03: signal_4a_sr;
+	02: signal_4a_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, fourtall_b, getbits(extra_callback_info2, 0, 2)){
 	00: signal_4b_st;
-	02: signal_4b_cl:
-	05: signal_4b_ct;
+	05: signal_4b_cl;
+	02: signal_4b_ct;
 }
 
-switch(feat_signals, SELF, fivetall_a, getbits(extra_callback_info2, 0, 2)){
+switch(FEAT_SIGNALS, SELF, fivetall_a, getbits(extra_callback_info2, 0, 2)){
 	00: signal_5a_st;
-	02: signal_5a_cl;
-	03: signal_5a_lr;
-	04: signal_5a_sr;
-	05: signal_5a_ct;
+	05: signal_5a_cl;
+	04: signal_5a_lr;
+	03: signal_5a_sr;
+	02: signal_5a_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, fivetall_b, getbits(extra_callback_info2, 0, 2)){
@@ -216,21 +221,60 @@ switch(FEAT_SIGNALS, SELF, sixtall, getbits(extra_callback_info2, 0, 2)){
 	02: signal_6_ct;
 }
 
+switch(FEAT_SIGNALS, SELF, japanmultiaspect, signal_style){
+	00: twotall_a;
+	01: twotall_b;
+	02: threetall;
+	03: fourtall_a;
+	04: fourtall_b;
+	05: fivetall_a;
+	06: fivetall_b;
+	07: sixtall;
+}
+
 item (FEAT_SIGNALS, custom_signals, 0) { 
 	property{
 		extra_aspects:		4;	//Number of extra aspects to be used across all signal types (0=only red/green, 1=red/yellow/green etc). Set it to the max of all your signal types
 		
 		define_style:		1;
-		style_name:			string(STR_SIG_1);
-		style_lookahead_extra_aspects:	2; //This is how you override the extra aspects, i.e. extra_aspects is set to 6 but you only want trains to see 4 signals ahead
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS);//Types of electric signals availiable to be built
+		style_name:			string(STR_SIG_2a);
+		style_lookahead_extra_aspects:	4;
 
 
 		define_style:		2;
-		style_name:			string(STR_SIG_2);
-		style_lookahead_extra_aspects:	2;
+		style_name:			string(STR_SIG_2b);
+		style_lookahead_extra_aspects:	4;
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
-		style_semaphore_enabled: bitmask(SIGNAL_TYPE_PBS_ONEWAY);//Types of electric signals availiable to be built
+
+		define_style:		3;
+		style_name:			string(STR_SIG_3);
+		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+
+		define_style:		4;
+		style_name:			string(STR_SIG_4a);
+		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+
+		define_style:		5;
+		style_name:			string(STR_SIG_4b);
+		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+
+		define_style:		6;
+		style_name:			string(STR_SIG_5a);
+		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+
+		define_style:		7;
+		style_name:			string(STR_SIG_5b);
+		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+
+		define_style:		8;
+		style_name:			string(STR_SIG_6);
+		style_lookahead_extra_aspects:	4;
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
 	}
 
     graphics {

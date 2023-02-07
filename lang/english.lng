@@ -3,7 +3,13 @@
 STR_GRF_NAME :Osswixs multiaspect japanese signal extension
 STR_GRF_DESC :Multiaspect signals based on japanese signalling using the japan-set signals
 
-STR_SIG_1 :4 Aspect Gantry Signal
-STR_SIG_2 :4 Aspect Gantry Signal (Flashing yellows)
+STR_SIG_2a : two light signal
+STR_SIG_2b : two light yellow signal
+STR_SIG_3 : three light signal
+STR_SIG_4a : four light signal
+STR_SIG_4b : four light yellow signal
+STR_SIG_5a : five light signal
+STR_SIG_5b : five light high speed signal
+STR_SIG_6 : six light high speed signal
 
 STR_UNSUPPORTED_VERSION	:You must use a recent version of JGR Patch Pack!
