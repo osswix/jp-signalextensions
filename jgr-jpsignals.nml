@@ -276,24 +276,24 @@ item (FEAT_SIGNALS, custom_signals, 0) {
 		define_style:		1;
 		style_name:			string(STR_SIG_2);
 //		style_lookahead_extra_aspects:	4;
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 
 
 		define_style:		2;
 		style_name:			string(STR_SIG_3);
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 
 		define_style:		3;
 		style_name:			string(STR_SIG_4);
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 
 		define_style:		4;
 		style_name:			string(STR_SIG_5);
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 
 		define_style:		5;
 		style_name:			string(STR_SIG_HS);
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 	}
 
     graphics {
