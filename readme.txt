@@ -9,8 +9,7 @@ Multiple aspect signals based on the original japanese signal set. JGR's patch p
 
 ## how do i use this?
 
-This set is an extension to the original japanese signals; in the current state multiple aspect signals are split into catagories for amount of lamps included in the signal, and split between semaphores/electric lights to differ between lights that support more near-green aspects (electric) and the double yellow aspects intended to show a restricted speed limit (in the semaphores group). High speed signals are an exception to this, in which case the semaphores contain six lamps wheras the electric contains five lamps. In this case as well the semaphore, six lamp, variant contains a restricted speed aspect, unlike the five lamp version.
-Because there is currently two versions, the multiaspect will show 2 caution lamps in a row.
+This set is an extension to the original japanese signals. There currently is two sets, restricted signals can be used for more densely signalled sections, or as path signals before stations to act like restricted speed signals.
 
 ## Created by
 osswix
