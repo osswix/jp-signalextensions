@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
-STR_GRF_NAME :Osswixs multiaspect japanese signal extension
-STR_GRF_DESC :Multiaspect signals based on japanese signalling using the japan-set signals
+STR_GRF_NAME :JP+ multiaspect signal extension
+STR_GRF_DESC :Multiaspect signals based on japanese signalling using the japan-set signals created by osswix
 
 STR_SIG_2 : two lamp signals
 STR_SIG_3 : three lamp signals

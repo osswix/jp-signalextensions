@@ -103,7 +103,7 @@ spriteset(signal_2b_ct, "japanmultiaspect.png"){template_signal_2tall(56,53)}
 spriteset(signal_3_cl, "japanmultiaspect.png"){template_signal_3tall(35,78)}
 spriteset(signal_3_ct, "japanmultiaspect.png"){template_signal_3tall(56,78)}
 spriteset(signal_3_st, "japanmultiaspect.png"){template_signal_3tall(70,78)}
-
+equires exactly one .grf file in NewGRF pack
 // 4 tall signals
 
 spriteset(signal_4a_cl, "japanmultiaspect.png"){template_signal_4tall(35,101)}
@@ -183,17 +183,16 @@ switch(FEAT_SIGNALS, SELF, threenormal, getbits(extra_callback_info2, 0, 8)){
 	06: signal_3_cl;
 	05: signal_3_cl;
 	04: signal_3_cl;
-	03: signal_3_cl;
+	03: signal_3_ct;
 	02: signal_3_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, fournormal, getbits(extra_callback_info2, 0, 8)){
 	00: signal_4a_st;
-	01: signal_4a_cl;
 	06: signal_4a_cl;
-	05: signal_4a_cl;
-	04: signal_4a_lr;
-	03: signal_4a_sr;
+	05: signal_4a_lr;
+	04: signal_4a_sr;
+	03: signal_4a_ct;
 	02: signal_4a_ct;
 }
 
@@ -221,9 +220,9 @@ switch(FEAT_SIGNALS, SELF, highspeedfive, getbits(extra_callback_info2, 0, 8)){
 	00: signal_5b_st;
 	01: signal_5b_hs;
 	06: signal_5b_cl;
-	05: signal_5b_cl;
-	04: signal_5b_lr;
-	03: signal_5b_sr;
+	05: signal_5b_lr;
+	04: signal_5b_sr;
+	03: signal_5b_ct;
 	02: signal_5b_ct;
 }
 
