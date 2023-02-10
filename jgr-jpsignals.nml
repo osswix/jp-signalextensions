@@ -189,6 +189,7 @@ switch(FEAT_SIGNALS, SELF, threenormal, getbits(extra_callback_info2, 0, 8)){
 
 switch(FEAT_SIGNALS, SELF, fournormal, getbits(extra_callback_info2, 0, 8)){
 	00: signal_4a_st;
+	01: signal_4a_cl;
 	06: signal_4a_cl;
 	05: signal_4a_lr;
 	04: signal_4a_sr;
