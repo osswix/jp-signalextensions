@@ -18,14 +18,14 @@ if (!extended_feature_test("action3_signals_custom_signal_sprites")) {
 //}
 template template_signal_invisible(x,y){
 
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
-		[ x, y, 5, 22, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
+		[ x, y, 1, 1, -1, -21]
 
 }
 template template_signal_2tall(x,y){
@@ -228,7 +228,7 @@ switch(FEAT_SIGNALS, SELF, fivenormal, getbits(extra_callback_info2, 0, 8)){
 	06: signal_5a_cl;
 	05: signal_5a_lr;
 	04: signal_5a_sr;
-	03: signal_5a_ct;[ x, y, 5, 22, -1, -21]
+	03: signal_5a_ct;
 	02: signal_5a_rs;
 }
 
