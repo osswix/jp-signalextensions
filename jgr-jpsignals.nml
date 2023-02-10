@@ -103,7 +103,7 @@ spriteset(signal_2b_ct, "japanmultiaspect.png"){template_signal_2tall(56,53)}
 spriteset(signal_3_cl, "japanmultiaspect.png"){template_signal_3tall(35,78)}
 spriteset(signal_3_ct, "japanmultiaspect.png"){template_signal_3tall(56,78)}
 spriteset(signal_3_st, "japanmultiaspect.png"){template_signal_3tall(70,78)}
-equires exactly one .grf file in NewGRF pack
+
 // 4 tall signals
 
 spriteset(signal_4a_cl, "japanmultiaspect.png"){template_signal_4tall(35,101)}
