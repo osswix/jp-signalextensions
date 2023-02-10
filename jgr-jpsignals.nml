@@ -2,7 +2,7 @@ grf {
     grfid: "OMJS";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
-    version: 0;
+    version: 0.5.1;
     min_compatible_version: 0;
 }
 
