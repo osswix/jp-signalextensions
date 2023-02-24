@@ -2,7 +2,7 @@ grf {
     grfid: "JPPS";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
-    version: 0-6-1;
+    version: 0-9-1;
     min_compatible_version: 0;
 }
 
