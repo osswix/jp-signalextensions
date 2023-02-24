@@ -12,6 +12,7 @@ STR_RS_2 : two lamp restricted signals
 STR_RS_4 : four lamp restricted signals
 STR_RS_5 : five lamp restricted signals
 STR_RS_6 : high speed restricted signals
-
+STR_DS   : distant signals
+STR_RP   : repeater signals
 
 STR_UNSUPPORTED_VERSION	:You must use a recent version of JGR Patch Pack!

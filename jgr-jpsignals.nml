@@ -88,6 +88,42 @@ template template_signal_6tall(x,y){
 	[ x+462, y, 6, 26, -1, -25,ANIM]
 }
 
+template template_signal_4talldistant(x,y){
+
+	[ x, y, 5, 22, -1, -25]
+	[ x+66, y, 6, 22, -1, -22]
+	[ x+132, y, 6, 22, -1, -25]
+	[ x+198, y, 5, 22, -6, -20]
+	[ x+264, y, 5, 22, -2, -20]
+	[ x+330, y, 5, 22, -3, -23]
+	[ x+396, y, 6, 22, -2, -25]
+	[ x+462, y, 6, 22, -1, -25]
+}
+
+template template_signal_2talldistant(x,y){
+
+	[ x, y, 5, 20, -1, -25]
+	[ x+66, y, 6, 20, -1, -20]
+	[ x+132, y, 6, 20, -1, -25]
+	[ x+198, y, 5, 20, -6, -18]
+	[ x+264, y, 5, 20, -2, -20]
+	[ x+330, y, 5, 20, -3, -23]
+	[ x+396, y, 6, 20, -2, -25]
+	[ x+462, y, 6, 20, -1, -25]
+}
+
+template template_signal_repeater(x,y){
+
+	[ x, y, 5, 21, -1, -25]
+	[ x+66, y, 6, 21, -1, -22]
+	[ x+132, y, 6, 21, -1, -25]
+	[ x+198, y, 5, 21, -10, -20]
+	[ x+264, y, 5, 21, -2, -20]
+	[ x+330, y, 5, 21, -3, -23]
+	[ x+396, y, 6, 21, -2, -25]
+	[ x+462, y, 6, 21, -1, -25]
+}
+
 // template for spriteset :
 // spriteset([name], "file location"){[template_specific](x,y)}
 // where file location is the location of the image containing the sprites
@@ -159,7 +195,21 @@ spriteset(signal_4b_rs, "japanmultiaspect.png"){template_signal_4tall(63,126)}
 spriteset(signal_5a_rs, "japanmultiaspect.png"){template_signal_5tall(63,151)}
 spriteset(signal_6_rs, "japanmultiaspect.png"){template_signal_6tall(63,205)}
 
-// \/ osswix now has touched it \/
+// distant signals
+
+spriteset(signal_d4_cl, "japanmultiaspect.png"){template_signal_4talldistant(35,258)}
+spriteset(signal_d4_sr, "japanmultiaspect.png"){template_signal_4talldistant(49,258)}
+spriteset(signal_d4_ct, "japanmultiaspect.png"){template_signal_4talldistant(56,258)}
+spriteset(signal_d4_of, "japanmultiaspect.png"){template_signal_4talldistant(28,258)}
+spriteset(signal_d2_cl, "japanmultiaspect.png"){template_signal_2talldistant(35,283)}
+spriteset(signal_d2_ct, "japanmultiaspect.png"){template_signal_2talldistant(56,283)}
+spriteset(signal_d2_of, "japanmultiaspect.png"){template_signal_2talldistant(28,283)}
+
+// repeaters
+
+spriteset(signal_repeater_cl, "japanmultiaspect.png"){template_signal_repeater(35,234)}
+spriteset(signal_repeater_ct, "japanmultiaspect.png"){template_signal_repeater(56,234)}
+spriteset(signal_repeater_st, "japanmultiaspect.png"){template_signal_repeater(70,234)}
 
 //Switches use the following format:
 //switch(FEAT_SIGNALS, SELF, [name], [variable]{
@@ -262,6 +312,38 @@ switch(FEAT_SIGNALS, SELF, sixrestriction, getbits(extra_callback_info2, 0, 8)){
 	02: signal_6_rs;
 }
 
+switch(FEAT_SIGNALS, SELF, fourdistant, getbits(extra_callback_info2, 0, 8)){
+	00: signal_d4_of;
+	01: signal_d4_cl;
+	05: signal_d4_cl;
+	04: signal_d4_cl;
+	03: signal_d4_sr;
+	02: signal_d4_ct;
+}
+
+switch(FEAT_SIGNALS, SELF, twodistant, getbits(extra_callback_info2, 0, 8)){
+	00: signal_d2_of;
+	01: signal_d2_cl;
+	05: signal_d2_cl;
+	04: signal_d2_cl;
+	03: signal_d2_cl;
+	02: signal_d2_of;
+}
+
+switch(FEAT_SIGNALS, SELF, repeatersignals, getbits(extra_callback_info2, 0, 8)){
+	00: signal_repeater_st;
+	01: signal_repeater_cl;
+	05: signal_repeater_cl;
+	04: signal_repeater_cl;
+	03: signal_repeater_ct;
+	02: signal_repeater_st;
+}
+
+switch(FEAT_SIGNALS, SELF, distantsignals, getbits(extra_callback_info2, 8, 8)){
+	00: fourdistant;
+	01: twodistant;
+}
+
 switch(FEAT_SIGNALS, SELF, tw_lamp_signal, getbits(extra_callback_info2, 16, 8)){
 	    twonormal;
 }
@@ -298,6 +380,14 @@ switch(FEAT_SIGNALS, SELF, hs_res_signal, getbits(extra_callback_info2, 16, 8)){
 	    sixrestriction;
 }
 
+switch(FEAT_SIGNALS, SELF, distant_signal, getbits(extra_callback_info2, 16, 8)){
+		distantsignals;
+}
+
+switch(FEAT_SIGNALS, SELF, repeater_signal, getbits(extra_callback_info2, 16, 8)){
+		repeatersignals;
+}
+
 switch(FEAT_SIGNALS, SELF, japanmultiaspect, signal_style){
 	01: tw_lamp_signal;
 	02: th_lamp_signal;
@@ -308,6 +398,8 @@ switch(FEAT_SIGNALS, SELF, japanmultiaspect, signal_style){
 	07: fo_res_signal;
 	08: fi_res_signal;
 	09: hs_res_signal;
+	10: distant_signal;
+	11: repeater_signal;
 }
 
 item (FEAT_SIGNALS, custom_signals, 0) { 
@@ -350,6 +442,19 @@ item (FEAT_SIGNALS, custom_signals, 0) {
 		define_style:		9;
 		style_name:			string(STR_RS_6);
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+
+		define_style:		10;
+		style_name:			string(STR_DS);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+		style_always_reserve_through:	01;
+
+
+		define_style:		11;
+		style_name:			string(STR_RP);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+		style_no_aspect_increase:	01;
+		style_always_reserve_through:	01;
 
 	}
 
