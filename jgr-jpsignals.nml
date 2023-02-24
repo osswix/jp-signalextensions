@@ -327,7 +327,7 @@ switch(FEAT_SIGNALS, SELF, twodistant, getbits(extra_callback_info2, 0, 8)){
 	05: signal_d2_cl;
 	04: signal_d2_cl;
 	03: signal_d2_cl;
-	02: signal_d2_of;
+	02: signal_d2_ct;
 }
 
 switch(FEAT_SIGNALS, SELF, repeatersignals, getbits(extra_callback_info2, 0, 8)){
