@@ -124,6 +124,19 @@ template template_signal_repeater(x,y){
 	[ x+462, y, 6, 21, -1, -25]
 }
 
+template template_signal_small(x,y){
+
+	[ x, y, 5, 8, -1, -11]
+	[ x+66, y, 6, 8, -1, -11]
+	[ x+132, y, 6, 8, -1, -11]
+	[ x+198, y, 5, 8, -2, -6]
+	[ x+264, y, 5, 8, -2, -8]
+	[ x+330, y, 5, 8, -3, -9]
+	[ x+396, y, 6, 8, -2, -11]
+	[ x+462, y, 6, 8, -1, -11]
+}
+
+
 // template for spriteset :
 // spriteset([name], "file location"){[template_specific](x,y)}
 // where file location is the location of the image containing the sprites
@@ -210,6 +223,16 @@ spriteset(signal_d2_of, "japanmultiaspect.png"){template_signal_2talldistant(28,
 spriteset(signal_repeater_cl, "japanmultiaspect.png"){template_signal_repeater(35,234)}
 spriteset(signal_repeater_ct, "japanmultiaspect.png"){template_signal_repeater(56,234)}
 spriteset(signal_repeater_st, "japanmultiaspect.png"){template_signal_repeater(70,234)}
+
+// dwaf signals
+spriteset(signal_dwarf_normal_cl, "japanmultiaspect.png"){template_signal_small(35,306)}
+spriteset(signal_dwarf_normal_st, "japanmultiaspect.png"){template_signal_small(70,306)}
+spriteset(signal_dwarf_of, "japanmultiaspect.png"){template_signal_small(28,306)}
+spriteset(signal_dwarf_colour_cl, "japanmultiaspect.png"){template_signal_small(35,317)}
+spriteset(signal_dwarf_colour_st, "japanmultiaspect.png"){template_signal_small(70,317)}
+
+// shinkansen markers
+spriteset(signal_shinkansen_marker, "japanmultiaspect.png"){template_signal_small(28,328)}
 
 //Switches use the following format:
 //switch(FEAT_SIGNALS, SELF, [name], [variable]{
@@ -339,9 +362,28 @@ switch(FEAT_SIGNALS, SELF, repeatersignals, getbits(extra_callback_info2, 0, 8))
 	02: signal_repeater_st;
 }
 
+switch(FEAT_SIGNALS, SELF, colourdwarf, getbits(extra_callback_info2, 0, 8)){
+	00: signal_dwarf_colour_st;
+		signal_dwarf_colour_cl;
+}
+
+switch(FEAT_SIGNALS, SELF, normaldwarf, getbits(extra_callback_info2, 0, 8)){
+	00: signal_dwarf_normal_st;
+		signal_dwarf_colour_cl;
+}
+
+switch(FEAT_SIGNALS, SELF, shinkansenmarker, getbits(extra_callback_info2, 0, 8)){
+	signal_shinkansen_marker;
+}
+
 switch(FEAT_SIGNALS, SELF, distantsignals, getbits(extra_callback_info2, 8, 8)){
 	00: fourdistant;
 	01: twodistant;
+}
+
+switch(FEAT_SIGNALS, SELF, dwarfsignals, getbits(extra_callback_info2, 8, 8)){
+	00: colourdwarf;
+	01: normaldwarf;
 }
 
 switch(FEAT_SIGNALS, SELF, tw_lamp_signal, getbits(extra_callback_info2, 16, 8)){
@@ -388,6 +430,14 @@ switch(FEAT_SIGNALS, SELF, repeater_signal, getbits(extra_callback_info2, 16, 8)
 		repeatersignals;
 }
 
+switch(FEAT_SIGNALS, SELF, dwarf_signal, getbits(extra_callback_info2, 16, 8)){
+		dwarfsignals;
+}
+switch(FEAT_SIGNALS, SELF, shinkansen_marker, getbits(extra_callback_info2, 16, 8)){
+		shinkansenmarker;
+}
+
+
 switch(FEAT_SIGNALS, SELF, japanmultiaspect, signal_style){
 	01: tw_lamp_signal;
 	02: th_lamp_signal;
@@ -400,6 +450,8 @@ switch(FEAT_SIGNALS, SELF, japanmultiaspect, signal_style){
 	09: hs_res_signal;
 	10: distant_signal;
 	11: repeater_signal;
+	12: dwarf_signal;
+	13: shinkansen_marker;
 }
 
 item (FEAT_SIGNALS, custom_signals, 0) { 
@@ -449,12 +501,22 @@ item (FEAT_SIGNALS, custom_signals, 0) {
 		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 		style_always_reserve_through:	01;
 
-
 		define_style:		11;
 		style_name:			string(STR_RP);
-		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_PBS);
 		style_no_aspect_increase:	01;
 		style_always_reserve_through:	01;
+
+		define_style:		12;
+		style_name:			string(STR_DW);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_PBS);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_PBS);
+		style_lookahead_single_signal_only: 01;
+
+		define_style:		13;
+		style_name:			string(STR_SM);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL);
+		style_opposite_side:	01;
 
 	}
 

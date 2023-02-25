@@ -9,7 +9,7 @@ Multiple aspect signals based on the original japanese signal set. JGR's patch p
 
 ## how do i use this?
 
-This set is an extension to the original japanese signals. There currently is two sets, restricted signals can be used for more densely signalled sections, or as path signals before stations to act like restricted speed signals.
+This set is an extension to the original japanese signals. There currently is four sets, restricted signals can be used for more densely signalled sections, or as path signals before stations to act like restricted speed signals. Repeater signals repeat the signal of the following sign. Distant signals are somewhat related to the following sign and as well increase the value of the next sign over.
 
 ## Created by
 osswix
