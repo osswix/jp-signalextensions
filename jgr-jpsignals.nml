@@ -30,14 +30,14 @@ template template_signal_invisible(x,y){
 }
 template template_signal_2tall(x,y){
 
-	[ x, y, 5, 22, -1, -21, ANIM]
-	[ x+66, y, 6, 22, -1, -21, ANIM]
-	[ x+132, y, 6, 22, -1, -21, ANIM]
-	[ x+198, y, 5, 22, -6, -21, ANIM]
-	[ x+264, y, 5, 22, -2, -21, ANIM]
-	[ x+330, y, 5, 22, -3, -19, ANIM]
-	[ x+396, y, 6, 22, -2, -21, ANIM]
-	[ x+462, y, 6, 22, -1, -21, ANIM]
+	[ x, y, 5, 19, -1, -21, ANIM]
+	[ x+66, y, 6, 19, -1, -21, ANIM]
+	[ x+132, y, 6, 19, -1, -21, ANIM]
+	[ x+198, y, 5, 19, -6, -21, ANIM]
+	[ x+264, y, 5, 19, -2, -21, ANIM]
+	[ x+330, y, 5, 19, -3, -19, ANIM]
+	[ x+396, y, 6, 19, -2, -21, ANIM]
+	[ x+462, y, 6, 19, -1, -21, ANIM]
 }
 
 template template_signal_3tall(x,y){
@@ -158,9 +158,9 @@ spriteset(signal_hidden, "japanmultiaspect.png"){template_signal_invisible(35,28
 
 // 2 tall signals
 
-spriteset(signal_2a_cl, "japanmultiaspect.png"){template_signal_2tall(35,28)}
-spriteset(signal_2a_st, "japanmultiaspect.png"){template_signal_2tall(70,28)}
-spriteset(signal_2b_ct, "japanmultiaspect.png"){template_signal_2tall(56,53)}
+spriteset(signal_2a_cl, "japanmultiaspect.png"){template_signal_2tall(35,31)}
+spriteset(signal_2a_st, "japanmultiaspect.png"){template_signal_2tall(70,31)}
+spriteset(signal_2b_ct, "japanmultiaspect.png"){template_signal_2tall(56,56)}
 
 // 3 tall signals
 
